@@ -9,7 +9,7 @@ import { UpdateCustomerDto } from '../dto/update-customer.dto';
 export class CustomerService {
   constructor(
     @InjectRepository(Customer)
-    private readonly customerRepository: Repository<Customer>,
+    private readonly customerRepository: Repository<Customer>
   ) {}
 
   /**
@@ -19,7 +19,7 @@ export class CustomerService {
    * @returns a promise of the created Customer.
    */
   async createCustomer(
-    createCustomerDto: CreateCustomerDto,
+    createCustomerDto: CreateCustomerDto
   ): Promise<Customer> {
     const customer = this.customerRepository.create(createCustomerDto);
     return this.customerRepository.save(customer);
@@ -51,7 +51,7 @@ export class CustomerService {
    */
   async updateCustomer(
     id: number,
-    updateCustomerDto: UpdateCustomerDto,
+    updateCustomerDto: UpdateCustomerDto
   ): Promise<Customer> {
     await this.customerRepository.update(id, updateCustomerDto);
     return this.viewCustomer(id);

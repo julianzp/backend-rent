@@ -8,7 +8,7 @@ import { UpdateCDDto } from '../dto/update-cd.dto';
 @Injectable()
 export class CdService {
   constructor(
-    @InjectRepository(CD) private readonly cdRepository: Repository<CD>,
+    @InjectRepository(CD) private readonly cdRepository: Repository<CD>
   ) {}
 
   /**
